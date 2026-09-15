@@ -87,7 +87,10 @@ api.interceptors.response.use(
     if (error.response?.status === 403) {
       router.replace("/unauthorized");
     }
-
+    if(error.response?.status === 429) {
+      const message = error.response.data?.message || "Too many requests. Please try again later.";
+      console.warn(message);
+    }
     return Promise.reject(error);
   }
 );
