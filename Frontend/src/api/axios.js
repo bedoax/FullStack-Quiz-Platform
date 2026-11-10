@@ -4,7 +4,7 @@ import { useAuthStore } from "@/stores/authStore";
 
 // Main API
 const api = axios.create({
-  baseURL: "https://localhost:7104/api",
+  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -13,7 +13,7 @@ const api = axios.create({
 
 // Refresh API
 const refreshApi = axios.create({
-  baseURL: "https://localhost:7104/api",
+  baseURL: API_BASE_URL,
   withCredentials: true,
 });
 
